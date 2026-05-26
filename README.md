@@ -645,7 +645,6 @@ Potential future research directions include:
 
 # External Resources
 
-- GitHub Repository: https://github.com/start-again-06/Predicting_F1_Pit_Stops
 - Formula 1 Official Website: https://www.formula1.com
 - PyTorch Framework: https://pytorch.org
 - FastF1 Library: https://theoehrly.github.io/Fast-F1/
