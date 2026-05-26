@@ -45,18 +45,6 @@ The project achieved a strong competitive performance on Kaggle by combining dee
 
 ---
 
-# Competition Performance Visualization
-
-```mermaid
-xychart-beta
-    title "Kaggle Competition Performance"
-    x-axis ["Total Participants", "Final Rank"]
-    y-axis "Ranking Position" 0 --> 2600
-    bar [2491, 231]
-```
-
----
-
 # Project Objectives
 
 The primary objectives of the project include:
