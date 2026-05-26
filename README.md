@@ -2,11 +2,33 @@
 
 ## Overview
 
-This project presents a machine learning and data-driven framework for predicting optimal Formula 1 pit stop strategies using race telemetry, tire degradation modeling, and race condition analysis. The repository focuses on leveraging predictive analytics, simulation methodologies, and intelligent strategy modeling to optimize pit stop timing and race performance.
+This project presents a comprehensive machine learning and deep learning framework for predicting optimal Formula 1 pit stop strategies using race telemetry, tire degradation behavior, race-state dynamics, and strategic motorsport analytics. The repository focuses on leveraging modern AI methodologies, predictive analytics, residual neural networks, and ensemble learning systems to optimize pit stop timing and improve race strategy decision-making under highly dynamic racing conditions.
 
-The framework integrates motorsport analytics with machine learning workflows to analyze race dynamics, tire behavior, lap performance, and strategic decision-making under varying race conditions such as weather, traffic, and safety car periods.
+Formula 1 strategy engineering is an extremely data-intensive domain where milliseconds determine race outcomes. Tire degradation, fuel load, race pace evolution, track temperature, weather transitions, safety car deployment, driver consistency, traffic management, and undercut/overcut strategies all influence pit stop timing decisions. This project aims to model those interactions using scalable deep learning pipelines capable of learning non-linear race dynamics from structured telemetry and race-state data.
 
-The project is designed to provide scalable experimentation pipelines for F1 strategy prediction, enabling reproducible workflows for simulation, optimization, and predictive modeling.
+The framework integrates:
+
+- Motorsport telemetry analytics
+- Deep residual neural networks
+- Structured tabular deep learning
+- Advanced preprocessing pipelines
+- Weighted ensemble blending
+- GPU-accelerated PyTorch training
+- Adaptive optimization strategies
+- Learning rate scheduling
+- Gradient clipping stabilization
+- Large-batch inference optimization
+
+The repository is designed to provide reproducible workflows for:
+
+- F1 race strategy prediction
+- Pit stop timing optimization
+- Tire degradation modeling
+- Telemetry-driven race analytics
+- Ensemble prediction systems
+- Deep learning experimentation for motorsport AI
+
+The project achieved a strong competitive performance on Kaggle by combining deep residual learning with weighted ensemble blending techniques for improved leaderboard stability and generalization.
 
 ---
 
@@ -15,411 +37,621 @@ The project is designed to provide scalable experimentation pipelines for F1 str
 - Competition: Formula 1 Pit Stop Prediction Challenge
 - Platform: Kaggle
 - Final Rank: **231 / 2491**
-- Focus Area:
-  - Pit stop prediction
-  - Tire degradation modeling
-  - Race strategy optimization
-  - Motorsport analytics
+- Competition Domain:
+  - Motorsport Analytics
+  - Formula 1 Strategy Optimization
+  - Telemetry-Based Prediction
+  - Deep Learning for Structured Data
+
+---
+
+# Competition Performance Visualization
+
+```mermaid
+xychart-beta
+    title "Kaggle Competition Performance"
+    x-axis ["Total Participants", "Final Rank"]
+    y-axis "Ranking Position" 0 --> 2600
+    bar [2491, 231]
+```
 
 ---
 
 # Project Objectives
 
-- Predict optimal pit stop windows
-- Model tire degradation dynamics
-- Analyze race pace evolution
-- Simulate race strategy outcomes
+The primary objectives of the project include:
+
+- Predict optimal Formula 1 pit stop timing
+- Model tire degradation and stint performance
+- Analyze race-state evolution dynamically
 - Improve strategic race decision-making
-- Develop interpretable machine learning pipelines
-- Enable scalable F1 race analytics experimentation
+- Optimize leaderboard generalization performance
+- Build scalable deep learning pipelines
+- Implement robust ensemble learning systems
+- Develop GPU-accelerated training workflows
+- Improve prediction stability under noisy conditions
+- Explore deep residual learning for tabular telemetry data
 
 ---
 
-# Core Features
+# Key Highlights
 
-- F1 pit stop prediction framework
-- Tire degradation modeling
-- Race strategy optimization
-- Dynamic lap-time analysis
-- Traffic and race condition simulation
-- Data-driven performance evaluation
-- Machine learning-based prediction pipelines
-- Motorsport analytics visualization
+The project incorporates multiple modern machine learning and deep learning optimization strategies:
+
+- Residual Neural Network Architecture
+- Deep Residual Learning Blocks
+- Batch Normalization Stabilization
+- ReLU Nonlinear Activations
+- Dropout Regularization
+- Xavier Weight Initialization
+- GPU Accelerated PyTorch Training
+- Adaptive Learning Rate Scheduling
+- AdamW Optimization
+- Gradient Clipping Stabilization
+- Weighted Ensemble Blending
+- Feature Scaling Pipelines
+- Categorical Encoding Pipelines
+- Large-Batch Deep Learning
+- Efficient Tensor-Based Data Pipelines
+- Non-blocking GPU Memory Transfers
+- Memory-Optimized Training Loops
+
+These components collectively improve:
+
+- Model convergence
+- Training stability
+- Generalization capability
+- Prediction robustness
+- Computational scalability
+- Leaderboard consistency
 
 ---
 
-# System Architecture
+# Overall System Architecture
 
 ```mermaid
 graph TD
 
-A[Race Telemetry Data] --> B[Data Processing Pipeline]
+A[Raw F1 Telemetry Data] --> B[Feature Engineering Pipeline]
 
-B --> C[Tire Wear Modeling]
-B --> D[Lap Time Analysis]
-B --> E[Race Condition Features]
+B --> C[Numerical Feature Processing]
+B --> D[Categorical Feature Encoding]
+B --> E[Missing Value Imputation]
 
-C --> F[Feature Engineering]
-D --> F
-E --> F
+C --> F[Standard Scaling]
+D --> G[One Hot Encoding]
+E --> H[Data Normalization]
 
-F --> G[Machine Learning Model]
+F --> I[Processed Feature Matrix]
+G --> I
+H --> I
 
-G --> H[Pit Stop Prediction]
+I --> J[Residual Neural Network]
 
-H --> I[Optimal Pit Window]
-H --> J[Tire Strategy]
-H --> K[Race Outcome Simulation]
+J --> K[Residual Block 1]
+K --> L[Residual Block 2]
+L --> M[Residual Block 3]
 
-I --> L[Strategy Evaluation]
-J --> L
-K --> L
+M --> N[Prediction Head]
 
-L --> M[Performance Metrics]
+N --> O[Neural Network Predictions]
+
+P[External Kaggle Submissions] --> Q[Weighted Ensemble Blending]
+
+O --> Q
+
+Q --> R[Final Pit Stop Predictions]
+
+R --> S[Kaggle Submission]
 ```
 
 ---
 
-# Workflow Pipeline
+# Residual Neural Network Framework
+
+## Deep Residual Learning Architecture
+
+The project uses a custom deep residual neural network architecture specifically optimized for structured motorsport telemetry data and tabular race-state features.
+
+Residual learning is particularly useful for deep architectures because it enables improved gradient propagation across multiple hidden layers, reducing optimization instability and improving convergence.
+
+The network architecture includes:
+
+- Input Projection Layers
+- Residual Learning Blocks
+- Batch Normalization Layers
+- ReLU Activation Functions
+- Dropout Regularization
+- Linear Projection Layers
+- Residual Skip Connections
+- Optimized Output Layers
+
+---
+
+# Neural Network Architecture
 
 ```mermaid
-flowchart LR
+graph TD
 
-A[Race Data] --> B[Preprocessing]
+A[Input Race Features] --> B[Input Linear Layer]
 
-B --> C[Feature Extraction]
+B --> C[ReLU Activation]
 
-C --> D[Machine Learning Model]
+C --> D[Dropout Layer]
 
-D --> E[Pit Stop Prediction]
+D --> E[Residual Block 1]
 
-E --> F[Strategy Simulation]
+E --> F[Residual Block 2]
 
-F --> G[Performance Evaluation]
+F --> G[Residual Block 3]
 
-G --> H[Visualization & Insights]
+G --> H[Output Projection Layer]
+
+H --> I[Pit Stop Probability Prediction]
 ```
 
 ---
 
-# Key Components
+# Residual Block Architecture
 
-## 1. Data Processing Pipeline
-
-The system processes multiple race-related variables including:
-
-- Tire compound information
-- Tire degradation rates
-- Lap times
-- Driver pace evolution
-- Traffic conditions
-- Safety car periods
-- Weather conditions
-
-The preprocessing pipeline ensures consistent and structured race telemetry representation for downstream predictive modeling.
-
----
-
-## 2. Tire Degradation Modeling
-
-The framework models tire wear progression over race stints:
-
-```math
-y = y_0 e^{-kt}
-```
-
-Where:
-
-- $y$ = Tire performance
-- $y_0$ = Initial tire performance
-- $k$ = Degradation coefficient
-- $t$ = Race laps or stint duration
-
-This enables:
-
-- Tire life estimation
-- Performance drop analysis
-- Optimal pit timing prediction
-- Compound strategy evaluation
-
----
-
-# Tire Strategy Pipeline
+The residual block is the core building unit of the neural network. It stabilizes training while enabling deeper feature extraction and non-linear representation learning.
 
 ```mermaid
 graph LR
 
-A[Initial Tire Compound] --> B[Tire Wear Estimation]
+A[Input x] --> B[BatchNorm]
 
-B --> C[Performance Decay]
+B --> C[ReLU]
 
-C --> D[Lap Time Impact]
+C --> D[Dropout]
 
-D --> E[Pit Window Prediction]
+D --> E[Linear Layer]
 
-E --> F[Optimal Strategy]
+E --> F[BatchNorm]
+
+F --> G[ReLU]
+
+G --> H[Dropout]
+
+H --> I[Linear Layer]
+
+I --> J[Residual Addition]
+
+A --> J
 ```
 
 ---
 
-## 3. Machine Learning Prediction Framework
+# Mathematical Representation of Residual Learning
 
-The project uses machine learning models to predict pit stop decisions based on race-state variables.
-
-The probabilistic prediction process can be formulated as:
+Residual mapping can be represented as:
 
 ```math
-P(pit \mid x) = f(x_1, x_2, x_3, ..., x_n)
+H(x) = F(x) + x
 ```
 
 Where:
 
-- $x_i$ represents race-state features
-- $P(pit \mid x)$ represents pit stop probability
+- $x$ = Input representation
+- $F(x)$ = Learned residual mapping
+- $H(x)$ = Final transformed representation
 
-Features may include:
+Residual learning improves:
+
+- Gradient flow
+- Feature reuse
+- Optimization stability
+- Convergence speed
+- Deep representation learning
+
+---
+
+# Data Processing Pipeline
+
+The preprocessing system is designed to efficiently handle structured Formula 1 telemetry and race-state data.
+
+```mermaid
+flowchart LR
+
+A[Raw F1 Data] --> B[Feature Selection]
+
+B --> C[Missing Value Imputation]
+
+C --> D[Categorical Encoding]
+
+D --> E[Feature Scaling]
+
+E --> F[Train Validation Split]
+
+F --> G[Tensor Conversion]
+
+G --> H[GPU Training Pipeline]
+```
+
+---
+
+# Core Features Used
+
+The model processes multiple motorsport-specific race-state variables including:
 
 - Tire age
+- Tire compound
+- Driver pace evolution
 - Lap number
-- Current position
+- Race position
+- Pit stop history
+- Traffic density
 - Gap to competitors
-- Traffic intensity
+- Stint length
 - Weather conditions
-- Safety car probability
+- Safety car influence
+- Race telemetry indicators
+- Historical race dynamics
+- Strategic race-state variables
+
+These features collectively help the model understand:
+
+- Tire degradation trends
+- Race pace transitions
+- Pit stop opportunities
+- Strategic undercut windows
+- Race evolution patterns
 
 ---
 
-## 4. Lap Time Prediction
+# Numerical Feature Processing
 
-The framework estimates lap-time evolution under varying race conditions:
+The framework applies robust preprocessing pipelines to numerical telemetry data.
+
+The preprocessing includes:
+
+- Median Imputation
+- Standardization
+- Feature Normalization
+
+Standardization is defined as:
 
 ```math
-y = mx + b
+z = \frac{x - \mu}{\sigma}
 ```
 
 Where:
 
-- $y$ = Predicted lap time
-- $x$ = Tire wear / race progression
-- $m$ = Performance degradation rate
-- $b$ = Baseline pace
+- $x$ = Original feature
+- $\mu$ = Mean value
+- $\sigma$ = Standard deviation
 
-This allows:
+This improves:
 
-- Pace forecasting
-- Stint performance estimation
-- Strategy comparison
-- Race simulation analysis
-
----
-
-# Mathematical Formulation
-
-## Prediction Objective
-
-The learning objective minimizes prediction error:
-
-```math
-\mathcal{L} = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
-```
-
-Where:
-
-- $y_i$ = Actual pit stop decision or lap time
-- $\hat{y}_i$ = Predicted value
-- $N$ = Number of samples
+- Numerical stability
+- Gradient optimization
+- Training convergence
+- Feature consistency
 
 ---
 
-## Optimization Objective
+# Categorical Feature Processing
 
-The strategy optimization objective can be represented as:
+Categorical motorsport features are processed using:
 
-```math
-\min \sum_{t=1}^{T} \text{LapTime}_t + \text{PitLoss}
-```
+- Most Frequent Imputation
+- One-Hot Encoding
 
-Subject to:
+This enables robust representation learning for:
 
-- Tire degradation constraints
-- Mandatory tire regulations
-- Race condition dynamics
+- Tire compounds
+- Driver categories
+- Track states
+- Team-specific information
+- Race conditions
 
 ---
 
-# Race Simulation Architecture
+# Deep Learning Training Pipeline
 
 ```mermaid
 flowchart TD
 
-A[Race State] --> B[Tire Wear Update]
+A[Processed Features] --> B[TensorDataset]
 
-B --> C[Lap Time Estimation]
+B --> C[PyTorch DataLoader]
 
-C --> D[Strategy Decision]
+C --> D[Residual Neural Network]
 
-D --> E{Pit Stop?}
+D --> E[Forward Propagation]
 
-E -->|Yes| F[Tire Change]
+E --> F[L1 Loss Computation]
 
-E -->|No| G[Continue Stint]
+F --> G[Backpropagation]
 
-F --> H[Updated Race State]
+G --> H[Gradient Clipping]
 
-G --> H
+H --> I[AdamW Optimization]
 
-H --> I[Next Lap Simulation]
+I --> J[Learning Rate Scheduler]
+
+J --> K[Updated Model Parameters]
 ```
 
 ---
 
-# Feature Engineering
+# Loss Function
 
-Key engineered features include:
+The project minimizes Mean Absolute Error (MAE), which is robust to noisy targets and improves prediction stability.
 
-- Tire age
-- Tire compound encoding
-- Average stint pace
-- Lap delta trends
-- Driver consistency
-- Pit stop history
-- Track characteristics
-- Weather influence
-- Traffic intensity
-- Safety car probability
+```math
+\mathcal{L}_{MAE} =
+\frac{1}{N}
+\sum_{i=1}^{N}
+|y_i - \hat{y}_i|
+```
+
+Where:
+
+- $y_i$ = Ground truth target
+- $\hat{y}_i$ = Predicted target
+- $N$ = Number of training samples
+
+---
+
+# Optimization Strategy
+
+The framework combines multiple optimization strategies:
+
+- AdamW Optimizer
+- Weight Decay Regularization
+- Adaptive Learning Rate Scheduling
+- Gradient Clipping
+- Batch Normalization Stabilization
+
+Gradient clipping stabilizes optimization:
+
+```math
+g = \min(g, \tau)
+```
+
+Where:
+
+- $g$ = Gradient magnitude
+- $\tau$ = Clipping threshold
+
+This reduces:
+
+- Gradient explosion
+- Optimization instability
+- Numerical divergence
+
+---
+
+# Ensemble Blending Strategy
+
+The final leaderboard solution combines:
+
+- External Kaggle model submissions
+- Residual Neural Network predictions
+
+Weighted ensemble formulation:
+
+```math
+P_{final} =
+\sum_{i=1}^{N}
+w_i P_i
+```
+
+Where:
+
+- $P_i$ = Individual model prediction
+- $w_i$ = Ensemble weight
+
+---
+
+# Ensemble Weight Distribution
+
+```mermaid
+pie title Ensemble Prediction Weights
+    "External Submission 1 (2.9)" : 72.5
+    "External Submission 2 (0.1)" : 2.5
+    "Residual Neural Network (1.0)" : 25
+```
+
+---
+
+# Ensemble Architecture
+
+```mermaid
+graph TD
+
+A[External Submission 1] --> D[Weighted Blending Engine]
+
+B[External Submission 2] --> D
+
+C[Residual Neural Network Predictions] --> D
+
+D --> E[Final Ensemble Predictions]
+
+E --> F[Kaggle Submission File]
+```
+
+---
+
+# Training Configuration
+
+| Component | Configuration |
+|---|---|
+| Framework | PyTorch |
+| Hidden Dimension | 256 |
+| Residual Blocks | 3 |
+| Batch Size | 8192 |
+| Epochs | 25 |
+| Optimizer | AdamW |
+| Scheduler | ReduceLROnPlateau |
+| Learning Rate | 5e-4 |
+| Dropout | 0.3 |
+| Loss Function | L1 Loss |
+| Gradient Clipping | 1.0 |
+
+---
+
+# Training Configuration Visualization
+
+```mermaid
+graph TD
+
+A[Training Configuration]
+
+A --> B[Batch Size: 8192]
+A --> C[Epochs: 25]
+A --> D[Learning Rate: 5e-4]
+A --> E[Residual Blocks: 3]
+A --> F[Hidden Dimension: 256]
+A --> G[Dropout: 0.3]
+A --> H[Gradient Clipping: 1.0]
+```
+
+---
+
+# Training Workflow
+
+```mermaid
+flowchart TD
+
+A[Initialize Model] --> B[Load Dataset]
+
+B --> C[Forward Pass]
+
+C --> D[Compute MAE Loss]
+
+D --> E[Backpropagation]
+
+E --> F[Gradient Clipping]
+
+F --> G[Optimizer Update]
+
+G --> H[Validation MAE]
+
+H --> I[ReduceLROnPlateau Scheduler]
+
+I --> J[Save Best Model]
+```
+
+---
+
+# GPU Optimization Techniques
+
+The implementation incorporates multiple GPU optimization strategies including:
+
+- CUDA acceleration
+- cuDNN benchmarking
+- TF32 matrix operations
+- Large-batch inference optimization
+- Non-blocking memory transfers
+- Memory-efficient tensor pipelines
+- Optimized PyTorch DataLoaders
+
+These optimizations significantly improve:
+
+- Training throughput
+- Computational efficiency
+- GPU utilization
+- Inference latency
+- Scalability for large telemetry datasets
 
 ---
 
 # Evaluation Metrics
 
-The repository evaluates:
+The repository evaluates multiple performance indicators:
 
-- Prediction accuracy
 - Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
-- Strategy efficiency
-- Race outcome improvement
-- Tire degradation estimation quality
+- Prediction robustness
+- Validation consistency
+- Ensemble stability
+- Generalization capability
+- Leaderboard performance
 
 ---
 
-# Motorsport Analytics Mindmap
+# Motorsport AI Mindmap
 
 ```mermaid
 mindmap
-  root((F1 Pit Stop Prediction))
+  root((F1 Pit Stop AI))
 
-    Race Analytics
-      Lap Times
-      Tire Wear
-      Strategy Windows
-      Traffic Analysis
-
-    Machine Learning
-      Predictive Modeling
-      Regression
-      Classification
+    Deep Learning
+      Residual Networks
+      BatchNorm
       Optimization
+      Ensemble Learning
 
-    Simulation
-      Race Modeling
-      Tire Degradation
-      Strategy Evaluation
-      Monte Carlo Simulation
+    Motorsport Analytics
+      Tire Wear
+      Race Strategy
+      Lap Prediction
+      Telemetry
+
+    Optimization
+      AdamW
+      LR Scheduling
+      Gradient Clipping
+      GPU Acceleration
 
     Features
       Tire Age
       Weather
-      Safety Car
-      Driver Pace
+      Traffic
+      Pit History
 
     Applications
-      Strategy Prediction
       Race Engineering
-      Motorsport Analytics
-      AI Decision Systems
-
-    Future Extensions
-      Reinforcement Learning
-      Real-Time Telemetry
-      Deep Learning
-      Digital Twin Racing
+      Strategy AI
+      Predictive Analytics
+      Simulation Systems
 ```
 
 ---
 
 # Applications
 
-This framework can be applied to:
+This framework can be applied to multiple domains including:
 
 - Formula 1 race strategy optimization
-- Motorsport analytics systems
+- Motorsport telemetry analytics
 - AI-assisted race engineering
-- Predictive sports analytics
-- Race simulation platforms
-- Telemetry intelligence systems
+- Predictive pit strategy systems
+- Real-time racing simulations
+- Sports analytics pipelines
 - Autonomous strategy recommendation systems
+- Race-state forecasting systems
+- Telemetry intelligence platforms
 
 ---
 
-# Future Extensions
+# Future Improvements
 
-Potential future improvements include:
+Potential future research directions include:
 
-- Reinforcement learning-based race agents
-- Real-time telemetry integration
-- Deep learning sequence models
-- Monte Carlo race simulations
-- Weather-aware strategy optimization
-- Multi-agent race strategy systems
+- Transformer-based telemetry modeling
+- Attention-based sequence learning
+- Temporal race-state transformers
+- Reinforcement learning race agents
+- Monte Carlo race simulation
+- Real-time telemetry inference
+- Graph neural networks for racing interactions
+- Multi-model stacking ensembles
 - Digital twin race simulations
-
----
-
-# Design Principles
-
-## Data-Driven Decision Making
-
-The project emphasizes:
-
-- Interpretable strategy prediction
-- Statistical race analysis
-- Predictive optimization
-- Motorsport intelligence
-
----
-
-## Scalability
-
-The framework supports:
-
-- Large-scale telemetry analysis
-- Modular experimentation
-- Flexible model integration
-- Future real-time deployment
-
----
-
-## Modularity
-
-Clear separation between:
-
-- Data preprocessing
-- Feature engineering
-- Modeling
-- Simulation
-- Evaluation
-- Visualization
+- Probabilistic strategy forecasting
 
 ---
 
 # Key Takeaways
 
-- Tire degradation strongly influences race outcomes
-- Data-driven pit strategies improve race performance
-- Predictive analytics enhances race decision-making
-- Machine learning enables scalable motorsport intelligence
-- Simulation pipelines improve strategy evaluation efficiency
+- Residual learning improves deep tabular modeling
+- Ensemble learning enhances leaderboard robustness
+- GPU acceleration enables scalable experimentation
+- Deep learning can effectively model race strategies
+- Structured preprocessing improves convergence stability
+- Large-batch optimization accelerates training efficiency
+- Weighted blending improves generalization performance
 
 ---
 
@@ -427,6 +659,7 @@ Clear separation between:
 
 - GitHub Repository: https://github.com/start-again-06/Predicting_F1_Pit_Stops
 - Formula 1 Official Website: https://www.formula1.com
+- PyTorch Framework: https://pytorch.org
 - FastF1 Library: https://theoehrly.github.io/Fast-F1/
 
 ---
@@ -437,4 +670,4 @@ By Anjan Mahapatra.
 
 This project is intended for educational, research, and motorsport analytics purposes.
 
-Refer to applicable licenses for associated datasets, APIs, machine learning libraries, and Formula 1 telemetry resources.
+Refer to applicable licenses for associated datasets, APIs, PyTorch, and Formula 1 telemetry resources.
