@@ -36,7 +36,7 @@ The project achieved a strong competitive performance on Kaggle by combining dee
 
 - Competition: Formula 1 Pit Stop Prediction Challenge
 - Platform: Kaggle
-- Final Rank: **231 / 2491**
+- Final Rank: **90 / 2491**
 - Competition Domain:
   - Motorsport Analytics
   - Formula 1 Strategy Optimization
